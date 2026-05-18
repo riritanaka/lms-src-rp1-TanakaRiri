@@ -333,5 +333,22 @@ public class StudentAttendanceService {
 		// 完了メッセージ
 		return messageUtil.getMessage(Constants.PROP_KEY_ATTENDANCE_UPDATE_NOTICE);
 	}
+	
+	/**
+	 * 過去日の未入力チェック
+	 * 
+	 * @return チェック結果
+	 * @exception ParseException
+	 */
+	public Boolean notEnterCheck()throws ParseException{
+		//当日日付
+		Date trainingDate = new Date();
+		//削除されていないデータのみ対象
+		Short deleteFlag = 0;
+		//未入力件数を取得
+		int count = tStudentAttendanceMapper.notEnterCount(loginUserDto.getLmsUserId(), deleteFlag, trainingDate);
+		//未入力件数が1件以上あればtrue,なければfalseを返す
+		return count > 0;
+	}
 
 }
