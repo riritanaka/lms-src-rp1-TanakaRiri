@@ -339,13 +339,13 @@ public class StudentAttendanceService {
 	 * 
 	 * @author 田中凜々 - Task.25
 	 * @return チェック結果
-	 * @exception ParseException
+	 * @throws ParseException
 	 */
 	public Boolean notEnterCheck()throws ParseException{
 		//当日日付
 		Date trainingDate = attendanceUtil.getTrainingDate();
 		//削除されていないデータのみ対象
-		Short deleteFlag = 0;
+		Short deleteFlag = Constants.DB_FLG_FALSE;
 		//未入力件数を取得
 		int count = tStudentAttendanceMapper.notEnterCount(loginUserDto.getLmsUserId(), deleteFlag, trainingDate);
 		//未入力件数が1件以上あればtrue,なければfalseを返す
