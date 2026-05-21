@@ -99,9 +99,14 @@
 		AND
 			status != 1
 		AND
-			training_start_time IS NULL
+			(training_start_time IS NULL
+		OR
+			training_start_time = ''
 		OR
 			training_end_time IS NULL
+		OR
+			training_end_time = '')
+			
 	</select>
 
 </mapper>

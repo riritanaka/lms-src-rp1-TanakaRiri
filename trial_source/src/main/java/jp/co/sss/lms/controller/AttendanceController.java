@@ -50,7 +50,7 @@ public class AttendanceController {
 		//タスク25（過去日が未入力の場合の表示機能）
 		//未入力チェック
 		Boolean notEnter = studentAttendanceService.notEnterCheck();
-		//未入力チェック結果を画面に渡す
+		System.out.println("通った！");
 		model.addAttribute("notEnter", notEnter);
 		
 		return "attendance/detail";

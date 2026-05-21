@@ -342,7 +342,7 @@ public class StudentAttendanceService {
 	 */
 	public Boolean notEnterCheck()throws ParseException{
 		//当日日付
-		Date trainingDate = new Date();
+		Date trainingDate = attendanceUtil.getTrainingDate();
 		//削除されていないデータのみ対象
 		Short deleteFlag = 0;
 		//未入力件数を取得
