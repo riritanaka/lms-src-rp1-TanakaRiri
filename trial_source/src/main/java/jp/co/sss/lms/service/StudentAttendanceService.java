@@ -337,6 +337,7 @@ public class StudentAttendanceService {
 	/**
 	 * 過去日の未入力チェック
 	 * 
+	 * @author 田中凜々 - Task.25
 	 * @return チェック結果
 	 * @exception ParseException
 	 */
