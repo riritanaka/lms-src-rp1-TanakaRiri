@@ -47,10 +47,9 @@ public class AttendanceController {
 				.getAttendanceManagement(loginUserDto.getCourseId(), loginUserDto.getLmsUserId());
 		model.addAttribute("attendanceManagementDtoList", attendanceManagementDtoList);
 		
-		//タスク25（過去日が未入力の場合の表示機能）
+		//タスク25 - 田中凜々（過去日が未入力の場合の表示機能）
 		//未入力チェック
 		Boolean notEnter = studentAttendanceService.notEnterCheck();
-		System.out.println("通った！");
 		model.addAttribute("notEnter", notEnter);
 		
 		return "attendance/detail";
