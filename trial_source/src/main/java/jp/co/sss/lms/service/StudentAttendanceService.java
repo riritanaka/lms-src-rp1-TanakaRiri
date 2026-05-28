@@ -247,11 +247,11 @@ public class StudentAttendanceService {
 			//出勤時間（時）
 			dailyAttendanceForm.setTrainingStartTimeHour(attendanceUtil.getHour(attendanceManagementDto.getTrainingStartTime()));
 			//出勤時間（分）
-			dailyAttendanceForm.setTrainingEndTimeMinute(attendanceUtil.getMinute(attendanceManagementDto.getTrainingStartTime()));
+			dailyAttendanceForm.setTrainingStartTimeMinute(attendanceUtil.getMinute(attendanceManagementDto.getTrainingStartTime()));
 			//退勤時間（時）
 			dailyAttendanceForm.setTrainingEndTimeHour(attendanceUtil.getHour(attendanceManagementDto.getTrainingEndTime()));
 			//退勤時間（分）
-			dailyAttendanceForm.setTrainingEndTimeMinute(attendanceUtil.getHour(attendanceManagementDto.getTrainingEndTime()));
+			dailyAttendanceForm.setTrainingEndTimeMinute(attendanceUtil.getMinute(attendanceManagementDto.getTrainingEndTime()));
 			
 			if (attendanceManagementDto.getBlankTime() != null) {
 				dailyAttendanceForm.setBlankTime(attendanceManagementDto.getBlankTime());
@@ -389,6 +389,7 @@ public class StudentAttendanceService {
 				String startTime = String.format("%02d:%02d",startHour,startMinute);
 				//出勤時間の設定
 				dailyAttendanceForm.setTrainingStartTime(startTime);
+			
 			}
 			//退勤時間（時）取得
 			Integer endHour = dailyAttendanceForm.getTrainingEndTimeHour();
